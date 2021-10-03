@@ -1,16 +1,9 @@
+
 # Artefatos do projeto
 
 Este diretório mantém os artefatos do projeto. 
 
 
-Liste os artefatos produzidos, com suas localizações e descrição do conteúdo.
-
-Por exemplo, pode-se criar um diretório "atas", que seria descrito da seguinte forma:
-* `/atas`
-	* **Ata_xx_ago_2020.docx**: Ata de reunião do dia xx de agosto de 2020.
-
-Pode-se também criar um diretório "canvas", que seria descrito da seguinte forma:
-* `/canvas`
-	* **BusinessModelCanvas.pdf**: Canvas do modelo de negócios.
-
-Assim, sucessivamente para outros artefatos como `processos` e `DER`, etc.
+<img src="https://user-images.githubusercontent.com/91295716/135775147-649713f0-d8c6-4847-94b8-2359a0c20f06.jpg" width="100%" />
+<img src="https://user-images.githubusercontent.com/91295716/135775188-aac9086d-8792-4ecf-a345-a8de8bef5e99.jpg" width="100%" />
+<img src="https://user-images.githubusercontent.com/91295716/135775202-6da4c284-da78-4290-a1e8-abae7c6cc91d.jpg" width="100% />
