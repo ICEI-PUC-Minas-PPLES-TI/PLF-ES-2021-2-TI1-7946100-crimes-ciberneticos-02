@@ -36,8 +36,15 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+|Pedro Guilherme Abreu|identificar uma maneira de ajudar meu filho a se proteger na internet |garantir a integridade da minha família.|            
+|Pedro Guilherme Abreu| confirmar a minha segurança na rede |garantir que os processos que sigo são suficientes para me proteger. |
+|Pedro Guilherme Abreu|compartilhar de modo facilitado e rápido maneiras de se defender | para auxiliar meus júniores durante o trabalho de maneira mais eficiente.|
+|Ana Beatriz Oliveira| encontrar uma ferramenta que possa me defender de modo prático | economizar meu tempo com questões de segurança.|
+|Ana Beatriz Oliveira|poder identificar os principais tópicos de noticias relacionados a segurança de modo simples.| poupar tempo enquanto completo múltiplas tarefas.|
+|Ana Beatriz Louveira|ter todo o tipo de informações de segurança sem a necessidade de aplicativos ou métodos prolongados | ter a praticidade a modo de me garantir disponibilidade sempre que necessário.|
+|Ana Beatriz Oliveira| testar meu estilo de gerenciamento das minhas contas| entender mais sobre os limites entre liberdade e exposição.|
+|Ana Beatriz Oliveira| gostaria de descobrir métodos de segurança na internet  | para me manter segura enquanto exerço minha profissão.|
+|Ana Beatriz Oliveira| desenvolver uma maneira para instruir meu pais idosos maneiras básicas para se proteger| para providenciar um novo tipo de lazer de  maneira segura aos dois.|
 
 > Apresente aqui as histórias de usuário que são relevantes para o
 > projeto de sua solução. As Histórias de Usuário consistem em uma
