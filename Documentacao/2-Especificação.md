@@ -6,9 +6,10 @@
 > documento, enumerando as técnicas e/ou ferramentas utilizadas para
 > realizar a especificações do projeto
 
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 ## Personas
 
-Ana Beatriz Oliveira
+|-----Ana Beatriz Oliveira-----|
 
 Ana tem 20 anos e trabalha como digital influencer, utilizandos suas redes sociais regurlamente demostrando seu dia a dia para milhares de pessoas
 Ana é uma pessoa extrovertia, com uma personalidade espontânea, gosta de estar sempre dentro das novidades
@@ -17,7 +18,7 @@ Sua principal dificuldade são os casos de perfies falsos, que se apresentam com
 Ana apesar de utilizar-se muito das redes sociais não possui um conhecimento pratico sobre procedimentos de segurança relacionado as redes sociais e plataformas onlines
 Busca uma solução que seja facil, entuitiva e possa ser acessivel
 
-Pedro Guilherme Abreu
+|-----Pedro Guilherme Abreu-----|
 
 Pedro mora em Campinas (SP), tem 48 anos, trabalha como gestor de vendas em uma empresa e é extremamente ocupado
 Pedro é uma pessoa com personalidade forte, que gosta de tomar decisões com base em dados de mercado
@@ -27,6 +28,7 @@ Mas enfrenta uma dificuldade em relação a altas taxas de exposição é falta 
 Pedro por ser uma pessoa que toma decisões apartir de dados, sempre se precavem contra riscos, mesmo tendo um conhecimento razo em relação a praticas de Web segurança
 Dinheiro não é problema, desde que o serviço seja de qualidade e ele concorde com a metodologia da instituição.
 
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 > Enumere e detalhe as personas da sua solução. Para
 > tanto, baseie-se tanto nos documentos disponibilizados na disciplina
