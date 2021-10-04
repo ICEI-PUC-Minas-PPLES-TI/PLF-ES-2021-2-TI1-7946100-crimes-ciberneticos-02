@@ -1,16 +1,11 @@
 # Gerenciamento de Projeto
 
-> Descreva aqui a metodologia de trabalho do grupo para atacar o
-> problema.
+>A resolução dos primeiros problemas foi feita diariamente a partir de reuniões utilizando como plataforma o Google Meet.
 
 ## Divisão de Papéis
 
 > Apresente a divisão de papéis entre os membros do grupo.
->
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu 
-> Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+
 
 ## Processo
 
