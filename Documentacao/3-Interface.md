@@ -5,8 +5,8 @@
 
 
 ## User Flow
-<img scr="https://github.com/ICEI-PUC-Minas-PPLES-TI/PLF-ES-2021-2-TI1-7946100-crimes-ciberneticos-02/issues/7#issue-1014643436" width="100%" />
+ ![UserFLow](https://user-images.githubusercontent.com/91295716/135782458-b53eb7fe-a068-4793-89bb-65f4ab95e538.jpg)
 
 
 ## Wireframes
-<img scr="https://github.com/ICEI-PUC-Minas-PPLES-TI/PLF-ES-2021-2-TI1-7946100-crimes-ciberneticos-02/issues/6#issue-1014643208" width="100%" />
+![Wireframes](https://user-images.githubusercontent.com/91295716/135782409-1822906a-a1e5-4b7d-b7de-992da9276efd.jpg)
