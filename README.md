@@ -14,4 +14,4 @@ O Foco do projeto é o desenvolvimento de uma ferramenta educativa de acesso pop
 ## Professores responsáveis
 
 * Rommel Vieira Carneiro
-* SImone Alves Nogueira
+* Simone Alves Nogueira
