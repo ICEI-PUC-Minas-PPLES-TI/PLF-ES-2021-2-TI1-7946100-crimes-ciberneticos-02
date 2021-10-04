@@ -8,11 +8,24 @@
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em
-se desenvolver profissionalmente através de um mestrado fora do país,
-pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está
-buscando uma agência que o ajude a encontrar universidades na Europa
-que aceitem alunos estrangeiros.
+Ana Beatriz Oliveira
+
+Ana tem 20 anos e trabalha como digital influencer, utilizandos suas redes sociais regurlamente demostrando seu dia a dia para milhares de pessoas
+Ana é uma pessoa extrovertia, com uma personalidade espontânea, gosta de estar sempre dentro das novidades
+Ela é solteiro e passa a maior parte do seu tempo realizando transmições ao-vivo, e o resto do tempo criando conteudos para redes sociais e buscando novidades
+Sua principal dificuldade são os casos de perfies falsos, que se apresentam como uma empressa oferecendo um sistema de parceiria/patrocinio, e as tentativas diversas de invação e roubo das redes sociais é os recorrentes casos de assédio
+Ana apesar de utilizar-se muito das redes sociais não possui um conhecimento pratico sobre procedimentos de segurança relacionado as redes sociais e plataformas onlines
+Busca uma solução que seja facil, entuitiva e possa ser acessivel
+
+Pedro Guilherme Abreu
+
+Pedro mora em Campinas (SP), tem 48 anos, trabalha como gestor de vendas em uma empresa e é extremamente ocupado
+Pedro é uma pessoa com personalidade forte, que gosta de tomar decisões com base em dados de mercado
+Tem uma esposa de 35 e um filho de 6 anos chamado Thiago, que acabou de finalizar a pré-escola
+Seu principal objetivo é sempre encontrar novas maneiras de inovar o mercado é de facilitar a vida dos clientes
+Mas enfrenta uma dificuldade em relação a altas taxas de exposição é falta de segurança apresentada em redes sociais, o que difilcuta o seu trabalho de pesquisa de mercado
+Pedro por ser uma pessoa que toma decisões apartir de dados, sempre se precavem contra riscos, mesmo tendo um conhecimento razo em relação a praticas de Web segurança
+Dinheiro não é problema, desde que o serviço seja de qualidade e ele concorde com a metodologia da instituição.
 
 
 > Enumere e detalhe as personas da sua solução. Para
