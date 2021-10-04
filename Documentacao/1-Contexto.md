@@ -10,10 +10,10 @@ Assim como na vida real, o mundo virtual possui criminosos que utilizam de ferra
 **Geral**:O objetivo geral deste trabalho busca atender os requisitos da matéria Trabalho Interdisciplinar: Aplicações Web do curso de Engenharia de Software da PUC Minas através da elaboração de uma interface que interaja com o usuário fornecendo informações e orientações a respeito de crimes em redes sociais de maneira lúdica e de fácil compreensão, provendo informações de segurança para prevenção individual de usuários de redes sociais no geral.
 
 **Específico**
-1.Identificar e entender o que são crimes cibernéticos e como eles ocorrem nas redes sociais.
-2.Identificar os riscos que os usuários estão expostos nas redes sociais e gerar conteúdo informativo sobre o assunto.
-3.Entender como as empresas provedoras das plataformas sociais tratam o assunto crimes cibernéticos e como dialogam com seus usuários. A partir disto, vamos potencializar o conteúdo de maneira lúdica
-4.Desenvolver uma interface que interaja através de um QUIZ com o usuário, permitindo tabular o grau de conhecimento deles sobre as ferramentas e protocólos de segurança. no final do processo, fornecer as informações necessárias para completar as lacunas existentes.
+1. Identificar e entender o que são crimes cibernéticos e como eles ocorrem nas redes sociais.
+2. Identificar os riscos que os usuários estão expostos nas redes sociais e gerar conteúdo informativo sobre o assunto.
+3. Entender como as empresas provedoras das plataformas sociais tratam o assunto crimes cibernéticos e como dialogam com seus usuários. A partir disto, vamos potencializar o conteúdo de maneira lúdica
+4. Desenvolver uma interface que interaja através de um QUIZ com o usuário, permitindo tabular o grau de conhecimento deles sobre as ferramentas e protocólos de segurança. no final do processo, fornecer as informações necessárias para completar as lacunas existentes.
 
 ## Justificativa
 
