@@ -22,7 +22,8 @@ input:focus, label:focus{
 
 body{
     padding-top: 20vh; /*view hight -> 20% da tela*/
-    background-image: url(img/backgroundRegister.jpg);
+    background-image: url(img/registerBackground.jpg);
+    background-size: cover;
 }
 
 
