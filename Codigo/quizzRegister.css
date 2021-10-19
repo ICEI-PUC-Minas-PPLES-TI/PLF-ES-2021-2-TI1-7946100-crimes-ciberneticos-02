@@ -1,0 +1,96 @@
+
+/* Parametros inicias*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+}
+
+input, label{
+    display: block;
+    width: 100%;
+
+}
+
+input:focus, label:focus{
+    outline: none;
+    
+}
+
+body{
+    padding-top: 20vh; /*view hight -> 20% da tela*/
+    background-image: url(img/backgroundRegister.jpg);
+}
+
+
+/* Formulário de registro */
+
+#mainContainerRegister{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#mainContainerRegister h1 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size:  1.4rem;
+}
+
+#mainContainerRegister p {
+    margin-bottom: 25px;
+    text-align: left;
+    font-size:  .9rem;
+}
+
+#registerForm{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.fullBox{
+    flex: 1 1 100%;
+    position: relative;
+}
+
+.halfBox{
+    flex: 1 1 45%;
+    position: relative;
+}
+
+.spacing {
+    margin-right: 2.5%;
+}
+
+label{
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+input{
+    border-bottom: 2px solid #028b09;
+    padding: 10px;
+    font-size: .9rem;
+    margin-bottom: 40px;
+}
+
+input:focus{
+    border-color: rgb(255, 0, 0);
+}
+
+#salvar{
+    background-color: rgb(9, 145, 9);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    cursor: pointer;
+    width: 100%;
+}
