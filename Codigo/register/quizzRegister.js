@@ -20,7 +20,6 @@ function salvarDados(dados) {
 }
 
 function registrarUsuario() {
-  alert("TESTE VOID")
   //Ler dados do localStorage
   let objDados = lerDados();
 
@@ -38,7 +37,7 @@ function registrarUsuario() {
   //salvar os dados no localStorage novamente 
   salvarDados(objDados);
 
-  imprimirDados();
+  imprimirDados(); //Fazer chamada para quizz. Cada resposta falsa do Quizz tem que gerar uma solição para ser disparada para e-mail do usuáro.
 
 }
 
