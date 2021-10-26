@@ -25,9 +25,9 @@ function registrarUsuario() {
   let objDados = lerDados();
 
   //registrar novo usuário
-  let strEmail = document.getElementById('inputEmail').value;
-  let strNome = document.getElementById('inputName').value;
-  let strSobrenome = document.getElementById('inputLastName').value;
+  let strEmail = document.getElementById('email').value;
+  let strNome = document.getElementById('name').value;
+  let strSobrenome = document.getElementById('lastName').value;
   let novoUsuario = {
     email: strEmail,
     nome: strNome,

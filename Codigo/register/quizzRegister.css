@@ -49,21 +49,16 @@ body{
     text-align: left;
     font-size:  .9rem;
 }
-
-#registerForm{
-    display: flex;
+#name {
+    display: inline-flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    max-width: 49.5%;
 }
 
-.fullBox{
-    flex: 1 1 100%;
-    position: relative;
-}
-
-.halfBox{
-    flex: 1 1 45%;
-    position: relative;
+#lastName {
+    display: inline-flex;
+    flex-wrap: wrap;
+    max-width: 49.5%;
 }
 
 .spacing {

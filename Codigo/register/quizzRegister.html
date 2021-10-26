@@ -1,41 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="quizzRegister.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="quizzRegister.css" />
     <title>Registro</title>
-</head>
-
-<body>
+  </head>
+  <body>
     <div id="mainContainerRegister">
-        <h1>Informe seu e-mail para salvar seus dados</h1>
-        <p>Você receberá um e-mail com o resultado do Quizz.</p>
-        <div id="registerForm">
-            <div class="fullBox">
-                <input type="text" id="email" placeholder="Digite seu e-mail">
-            </div>
-            <div id="halfBox spacing">
-                <input type="text" id="name" placeholder="Digite seu nome">
-            </div>
-            <div id="halfBox">
-                <input type="text"  id="lastName" placeholder="Digite seu sobrenome">
-            </div>
-            <div class="fullBox">
-                <button id="salvar">asdfasdfasdfasdf
-                    
-                </button>
-                <button id="imprimir">Imprimir</button>
-                <div id="tela"></div>
-            </div>
-        </div>
+      <h1>Informe seu e-mail para salvar seus dados</h1>
+      <p>Você receberá um e-mail com o resultado do Quizz.</p>
+      <div id="registerForm">
+        <input type="text" id="email" placeholder="Digite seu e-mail" />
+        <input type="text" id="name" placeholder="Digite seu nome" />
+        <input type="text" id="lastName" placeholder="Digite seu sobrenome" />
+      </div>
+      <button id="salvar">Salvar e iniciar o quizz</button>
+      <button id="imprimir">Imprimir(dev)</button>
+      <div id="tela"></div>
     </div>
-    
-
-
     <script src="quizzRegister.js"></script>
-</body>
-
+  </body>
 </html>
