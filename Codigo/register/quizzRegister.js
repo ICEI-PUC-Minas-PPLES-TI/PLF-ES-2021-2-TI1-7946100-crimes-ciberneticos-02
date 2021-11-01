@@ -34,8 +34,7 @@ function registrarUsuario() {
   };
   objDados.users.push(novoUsuario);
 
-  //salvar os dados no localStorage novamente 
-  salvarDados(objDados);
+  salvarDados(objDados); //salvar os dados no localStorage novamente 
 
   imprimirDados(); //Fazer chamada para quizz. Cada resposta falsa do Quizz tem que gerar uma solição para ser disparada para e-mail do usuáro.
 
