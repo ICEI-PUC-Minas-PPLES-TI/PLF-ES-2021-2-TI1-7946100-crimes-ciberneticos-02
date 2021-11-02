@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro de Contatos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="myQuestions.css">
+</head>
+
+<body onload="init()">
+    <h1>Gestão das perguntas do Quizz (CRUD)</h1>
+<!-- Formulário para gestão das perguntas do Quizz -->
+        <form id="form-pergutaQuizz">
+            <div class="form-group row">
+                <div class="col-sm-2">
+                    <label for="inputId">Id</label>
+                    <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
+                </div>
+                <div class="col-sm-10">
+                    <label for="inputPergunta">Pergunta</label>
+                    <input type="text" class="form-control" id="inputPergunta" placeholder="Qul a pergunta?">
+                </div>
+
+                <div class="col-sm-2">
+                    <label for="inputAlternativa">Alternativa</label>
+                    <input type="text" class="form-control" id="inputAlternativa" placeholder="True" value="True" disabled>
+                </div>
+                <div class="col-sm-10">
+                    <label for="inputResposta">Resposta</label>
+                    <input type="text" class="form-control" id="inputResposta" placeholder="Qul a pergunta?">
+                </div>
+
+                <div class="col-sm-12">
+                    <label for="inputSite">Site / referência</label>
+                    <input type="text" class="form-control" id="inputSite" placeholder="Qul a pergunta?">
+                </div>
+
+            <div id="botoesAll" class="form-group row">
+                <div class="col-12">
+                    <input type="button" class="btn btn-success" id="btnInsert" value="Inserir">
+                    <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar">
+                    <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
+                  <!--   <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Form"> -->
+                </div>
+            </div>
+        </form>
+
+        <div class="row">
+            <div class="col-12">
+                <table id="grind-myQuestions" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Pergunta</th>
+                            <th scope="col">Resposta</th>
+                            <th scope="col">Alternativa</th>
+                            <th scope="col">Site</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-myQuestions">
+                        <tr>
+                            <td scope="row">1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="myQuestions.js"></script>
+    <script>
+        function exibePerguntas() {
+            // Remove todas as linhas do corpo da tabela
+            $("#table-myQuestions").html("");
+
+            // Popula a tabela com os registros do banco de dados
+            for (i = 0; i < db.data.length; i++) {
+                let perguntaQuizz = db.data[i];    
+                $("#table-myQuestions").append(`<tr><td scope="row">${perguntaQuizz.id}</td>
+                                                <td>${perguntaQuizz.pergunta}</td>
+                                                <td>${perguntaQuizz.resposta}</td>
+                                                <td>${perguntaQuizz.alternativa}</td>
+                                                <td>${perguntaQuizz.site}</td>
+                                            </tr>`);
+            }
+        }
+
+        function init() {
+            // Adiciona funções para tratar os eventos 
+            $("#btnInsert").click(function () {
+                // Verfica se o formulário está preenchido corretamente
+                if (!$('#form-pergutaQuizz')[0].checkValidity()) {
+                    displayMessage("Preencha o formulário corretamente.");
+                    return;
+                }
+
+                // Obtem os valores dos campos do formulário
+                let campoPergunta = $("#inputPergunta").val();
+                let campoResposta = $("#inputResposta").val();
+                let campoAlternativa = $('#inputAlternativa').val();
+                let campoSite = $("#inputSite").val();
+                let perguntaQuizz = { pergunta: campoPergunta, 
+                    resposta: campoResposta, 
+                    alternativa: campoAlternativa,
+                    site: campoSite};
+
+                insertPergunta(perguntaQuizz);
+
+                // Reexibe os contatos
+                exibePerguntas();
+
+                // Limpa o formulario
+                $("#form-pergutaQuizz")[0].reset();
+            });
+
+            // Intercepta o click do botão Alterar
+            $("#btnUpdate").click(function () {
+                // Obtem os valores dos campos do formulário
+                let campoId = $("#inputId").val();
+                if (campoId == "") {
+                    displayMessage("Selecione um contato para ser alterado.");
+                    return;
+                }
+                let campoPergunta = $("#inputPergunta").val();
+                let campoResposta = $("#inputResposta").val();
+                let campoAlternativa = $('#inputAlternativa').val();
+                let campoSite = $("#inputSite").val();
+                let perguntaQuizz = { pergunta: campoPergunta, 
+                    resposta: campoResposta, 
+                    alternativa: campoAlternativa,
+                    site: campoSite};
+
+
+                updatePergunta(parseInt(campoId), perguntaQuizz);
+
+                // Reexibe os contatos
+                exibePerguntas();
+
+                // Limpa o formulario
+                $("#form-pergutaQuizz")[0].reset();
+            });
+
+            // Intercepta o click do botão Excluir
+            $("#btnDelete").click(function () {
+                let campoId = $("#inputId").val();
+                if (campoId == "") {
+                    displayMessage("Selecione um contato a ser excluído.");
+                    return;
+                }
+                deletePergunta(parseInt(campoId));
+
+                // Reexibe os contatos
+                exibePerguntas();
+
+                // Limpa o formulario
+                $("#form-pergutaQuizz")[0].reset();
+            });
+
+            /* // Intercepta o click do botão Listar Contatos
+            $("#btnClear").click(function () {
+                $("#form-pergutaQuizz")[0].reset();
+            }); */
+
+/*             // Oculta a mensagem de aviso após alguns segundos
+            $('#msg').bind("DOMSubtreeModified", function () {
+                window.setTimeout(function () {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                        $(this).remove();
+                    });
+                }, 5000);
+            }); */
+
+            // Preenche o formulário quando o usuario clicar em uma linha da tabela 
+            $("#grind-myQuestions").on("click", "tr", function (e) {
+                let linhaPerguntaQuizz = this;
+                colunas = linhaPerguntaQuizz.querySelectorAll("td");
+
+                $("#inputId").val(colunas[0].innerText);
+                $("#inputPergunta").val(colunas[1].innerText);
+                $("#inputResposta").val(colunas[2].innerText);
+                $("#inputAlternativa").val(colunas[3].innerText);
+                $("#inputSite").val(colunas[4].innerText);
+            });
+
+            exibePerguntas();
+        }
+    </script>
+</body>
+
+</html>
