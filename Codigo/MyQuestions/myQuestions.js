@@ -4,16 +4,17 @@ var db_perguntaQuizzStdin = {
     {
       id: 1,
       pergunta: "Você conhece o 2FA ?",
-      resposta: "2FA é um autenticador............................",
+      resposta:
+        "A autenticação de dois fatores é uma camada extra de proteção que pode ser ativada em contas online. Também conhecido pela sigla 2FA, originária do inglês 'two-factor authentication', o recurso insere uma segunda verificação de identidade do usuário no momento do login, evitando o acesso às contas mesmo quando a senha é vazada.",
       alternativa: true,
-      site: "Sincere@april.biz",
+      site: "encurtador.com.br/myN38",
     },
     {
       id: 2,
       pergunta: "Você conhece o registrato do Bano cental ?",
-      resposta: "É uma ferramenta que permite o cidadão saber........",
+      resposta: "É uma ferramenta que permite o cidadão saber Informações gratuitas de dívidas com bancos e órgãos públicos, cheques devolvidos, contas, chaves Pix e operações de câmbio.",
       alternativa: true,
-      site: "Sincere@april.biz",
+      site: "encurtador.com.br/sDL46",
     },
   ],
 };
@@ -43,7 +44,7 @@ function insertPergunta(perguntaQuizz) {
 
   // Insere o novo objeto no array
   db.data.push(novaPergunta);
-  displayMessage("Pergunta inserido com sucesso");
+  displayMessage("Pergunta inserida com sucesso");
 
   // Atualiza os dados no Local Storage
   localStorage.setItem("db_quizz", JSON.stringify(db));
@@ -54,13 +55,11 @@ function updatePergunta(id, perguntaQuizz) {
   let index = db.data.map((obj) => obj.id).indexOf(id);
 
   // Altera os dados do objeto no array
-    (db.data[index].pergunta = perguntaQuizz.pergunta),
+  (db.data[index].pergunta = perguntaQuizz.pergunta),
     (db.data[index].resposta = perguntaQuizz.resposta),
     (db.data[index].alternativa = perguntaQuizz.alternativa),
     (db.data[index].site = perguntaQuizz.site),
-
-
-  displayMessage("Pergunta alterado com sucesso");
+    displayMessage("Pergunta alterada com sucesso");
 
   // Atualiza os dados no Local Storage
   localStorage.setItem("db_quizz", JSON.stringify(db));
