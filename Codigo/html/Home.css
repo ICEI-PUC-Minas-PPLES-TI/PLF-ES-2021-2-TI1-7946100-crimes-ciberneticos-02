@@ -1,0 +1,125 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+  }
+  .card-img-overlay{
+      align-self: center;
+  }
+  
+  .header {
+      overflow: hidden;
+      background-color: #201e1e;
+      padding: 20px 10px;
+  }
+  /* Style the header links */
+  .header a {
+      float: left;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+  }
+
+    
+  .card1{
+      max-width: 400px;
+      margin:40px
+  }
+  label.radio {
+      cursor: pointer
+  }
+  
+  label.radio input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      visibility: hidden;
+      pointer-events: none
+  }
+  
+  label.radio span {
+      padding: 4px 0px;
+      border: 1px solid red;
+      display: inline-block;
+      color: red;
+      width: 100px;
+      text-align: center;
+      border-radius: 3px;
+      margin-top: 7px;
+      text-transform: uppercase
+  }
+  
+  label.radio input:checked+span {
+      border-color: red;
+      background-color: red;
+      color: #fff
+  }
+
+  a.nav-link{
+      color: white;
+  }
+  .ans {
+      margin-left: 36px !important
+  }
+  
+  .btn:focus {
+      outline: 0 !important;
+      box-shadow: none !important
+  }
+  
+  .btn:active {
+      outline: 0 !important;
+      box-shadow: none !important
+  }
+  
+  .h5{
+      font-family: Courier;
+  }
+    
+    /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+  .logo{
+      width: 70px;
+  }
+    
+    /* Change the background color on mouse-over */
+  .header a:hover {
+      background-color: #ddd;
+      color: rgb(0, 0, 0, 0.2);
+  }
+    
+  
+  
+  .footer p{
+      align-content: center;
+      width: 100%;
+      text-align: center;
+      background-color: rgb(40, 40, 40);
+      color: white;
+      height: 20px;
+      size: 20px;
+      position: absolute;
+      bottom: 0;
+  }
+  
+  .card-img{
+      width:80%;
+      align-self: center;
+  }
+  .Dicas{
+      display: flex;
+      flex-wrap: wrap;
+      flex-basis: 25%;
+      margin: 30px, 30px, 30px, 30px;
+      align-items: center;
+      align-content: space-between;
+      width: 18rem;
+  }
+  
+  .card-body{
+     margin: 30px;
+  
+  }
