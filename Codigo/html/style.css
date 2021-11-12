@@ -1,18 +1,18 @@
-*{
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
-  }
+
   .card-img-overlay{
       align-self: center;
   }
   
+
+  /* --------Meunu - início-------------*/
+
   .header {
       overflow: hidden;
       background-color: #201e1e;
-      padding: 20px 10px;
+      vertical-align: center;
   }
-  /* Style the header links */
+
+
   .header a {
       float: left;
       color: rgb(255, 255, 255);
@@ -24,7 +24,17 @@
       border-radius: 4px;
   }
 
+  .active{
+      background-color: rgba(0, 218, 0, 0.438);
+  }
     
+
+  /* --------Meunu - Fim----------------*/
+
+  .btn btn-primary
+
+  /* --------Body - início-------------*/
+
   .card1{
       max-width: 400px;
       margin:40px
