@@ -25,23 +25,39 @@
                     <label for="inputId">Id</label>
                     <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-12">
                     <label for="inputPergunta">Pergunta</label>
-                    <input type="text" class="form-control" id="inputPergunta" placeholder="Qul a pergunta?">
-                </div>
-
-                <div class="col-sm-2">
-                    <label for="inputAlternativa">Alternativa</label>
-                    <input type="text" class="form-control" id="inputAlternativa" placeholder="True" value="True" disabled>
-                </div>
-                <div class="col-sm-10">
-                    <label for="inputResposta">Resposta</label>
-                    <input type="text" class="form-control" id="inputResposta" placeholder="Qul a pergunta?">
+                    <input type="text" class="form-control" id="inputPergunta" placeholder="Qual a pergunta?">
                 </div>
 
                 <div class="col-sm-12">
-                    <label for="inputSite">Site / referência</label>
-                    <input type="text" class="form-control" id="inputSite" placeholder="Qul a pergunta?">
+                    <label for="inputAlternativaA">Alternativa A</label>
+                    <input type="text" class="form-control" id="inputAlternativaA" placeholder="Alternativa A" >
+                </div>
+                <div class="col-sm-12">
+                    <label for="inputAlternativaB">Alternativa B</label>
+                    <input type="text" class="form-control" id="inputAlternativaB" placeholder="Alternativa B" >
+                </div>
+                <div class="col-sm-12">
+                    <label for="inputAlternativaC">Alternativa C</label>
+                    <input type="text" class="form-control" id="inputAlternativaC" placeholder="Alternativa C" >
+                </div>
+                <div class="col-sm-12">
+                    <label for="inputAlternativaD">Alternativa D</label>
+                    <input type="text" class="form-control" id="inputAlternativaD" placeholder="Alternativa D" >
+                </div>
+                <div class="col-sm-12">
+                    <label for="inputAlternativaCorreta">Alternatica correta</label>
+                    <input type="text" class="form-control" id="inputAlternativaCorreta" placeholder="Informe a letra da alternativa correta" >
+                </div>
+                <div class="col-sm-12">
+                    <label for="inputDica">Dica</label>
+                    <input type="text" class="form-control" id="inputDica" placeholder="Qul a resposta?">
+                </div>
+
+                <div class="col-sm-12">
+                    <label for="inputSite">Site para referência</label>
+                    <input type="text" class="form-control" id="inputSite" placeholder="Qul a referêcia?">
                 </div>
 
             <div id="botoesAll" class="form-group row">
@@ -61,14 +77,22 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Pergunta</th>
-                            <th scope="col">Resposta</th>
-                            <th scope="col">Alternativa</th>
+                            <th scope="col">Dica</th>
+                            <th scope="col">Alternativa A</th>
+                            <th scope="col">Alternativa B</th>
+                            <th scope="col">Alternativa C</th>
+                            <th scope="col">Alternativa D</th>
+                            <th scope="col">Alternativa Correta</th>
                             <th scope="col">Site</th>
                         </tr>
                     </thead>
                     <tbody id="table-myQuestions">
                         <tr>
                             <td scope="row">1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -92,8 +116,12 @@
                 let perguntaQuizz = db.data[i];    
                 $("#table-myQuestions").append(`<tr><td scope="row">${perguntaQuizz.id}</td>
                                                 <td>${perguntaQuizz.pergunta}</td>
-                                                <td>${perguntaQuizz.resposta}</td>
-                                                <td>${perguntaQuizz.alternativa}</td>
+                                                <td>${perguntaQuizz.dica}</td>
+                                                <td>${perguntaQuizz.alternativaA}</td>
+                                                <td>${perguntaQuizz.alternativaB}</td>
+                                                <td>${perguntaQuizz.alternativaC}</td>
+                                                <td>${perguntaQuizz.alternativaD}</td>
+                                                <td>${perguntaQuizz.alternativaCorreta}</td>
                                                 <td>${perguntaQuizz.site}</td>
                                             </tr>`);
             }
@@ -110,17 +138,28 @@
 
                 // Obtem os valores dos campos do formulário
                 let campoPergunta = $("#inputPergunta").val();
-                let campoResposta = $("#inputResposta").val();
-                let campoAlternativa = $('#inputAlternativa').val();
+                let campoDica = $("#inputDica").val();
+                let campoAlternativaA = $('#inputAlternativaA').val();
+                let campoAlternativaB = $('#inputAlternativaB').val();
+                let campoAlternativaC = $('#inputAlternativaC').val();
+                let campoAlternativaD = $('#inputAlternativaD').val();
+                let campoAlternativaCorreta = $('#inputAlternativaCorreta').val();
                 let campoSite = $("#inputSite").val();
-                let perguntaQuizz = { pergunta: campoPergunta, 
-                    resposta: campoResposta, 
-                    alternativa: campoAlternativa,
-                    site: campoSite};
+                let perguntaQuizz =
+                    { 
+                    pergunta: campoPergunta, 
+                    dica: campoDica, 
+                    alternativaA: campoAlternativaA,
+                    alternativaB: campoAlternativaB,
+                    alternativaC: campoAlternativaC,
+                    alternativaD: campoAlternativaD,
+                    alternativaCorreta: campoAlternativaCorreta,
+                    site: campoSite 
+                    };
 
                 insertPergunta(perguntaQuizz);
 
-                // Reexibe os contatos
+                // Reexibe as perguntas
                 exibePerguntas();
 
                 // Limpa o formulario
@@ -136,13 +175,24 @@
                     return;
                 }
                 let campoPergunta = $("#inputPergunta").val();
-                let campoResposta = $("#inputResposta").val();
-                let campoAlternativa = $('#inputAlternativa').val();
+                let campoDica = $("#inputDica").val();
+                let campoAlternativaA = $('#inputAlternativaA').val();
+                let campoAlternativaB = $('#inputAlternativaB').val();
+                let campoAlternativaC = $('#inputAlternativaC').val();
+                let campoAlternativaD = $('#inputAlternativaD').val();
+                let campoAlternativaCorreta = $('#inputAlternativaCorreta').val();
                 let campoSite = $("#inputSite").val();
-                let perguntaQuizz = { pergunta: campoPergunta, 
-                    resposta: campoResposta, 
-                    alternativa: campoAlternativa,
-                    site: campoSite};
+                let perguntaQuizz =
+                    { 
+                    pergunta: campoPergunta, 
+                    dica: campoDica, 
+                    alternativaA: campoAlternativaA,
+                    alternativaB: campoAlternativaB,
+                    alternativaC: campoAlternativaC,
+                    alternativaD: campoAlternativaD,
+                    alternativaCorreta: campoAlternativaCorreta,
+                    site: campoSite 
+                    };
 
 
                 updatePergunta(parseInt(campoId), perguntaQuizz);
@@ -191,9 +241,13 @@
 
                 $("#inputId").val(colunas[0].innerText);
                 $("#inputPergunta").val(colunas[1].innerText);
-                $("#inputResposta").val(colunas[2].innerText);
-                $("#inputAlternativa").val(colunas[3].innerText);
-                $("#inputSite").val(colunas[4].innerText);
+                $("#inputDica").val(colunas[2].innerText);
+                $("#inputAlternativaA").val(colunas[3].innerText);
+                $("#inputAlternativaB").val(colunas[4].innerText);
+                $("#inputAlternativaC").val(colunas[5].innerText);
+                $("#inputAlternativaD").val(colunas[6].innerText);
+                $("#inputAlternativaCorreta").val(colunas[7].innerText);
+                $("#inputSite").val(colunas[8].innerText);
             });
 
             exibePerguntas();
