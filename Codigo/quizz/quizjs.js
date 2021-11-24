@@ -140,41 +140,24 @@
   const submitButton = document.getElementById('submit');
   
   //Only this part should be changed 
-  const myQuestions = [
-    {
-      question: "O nome dado aos golpes aplicados por meios humanos e sociais se chama:",
-      answers: {
-        a: "Vigarice",
-        b: "Pilantragem",
-        c: "Hacking",
-        d: "Engenharia social"
-      },
-      correctAnswer: "d"
-    },
-    {
-    question: "A maioria dos golpes são aplicados por :",
-      answers: {
-        a: "meios tecnológicos",
-        b: "sociais ou humanos",
-        c: "em sites de pornografia",
-        d: "nos sites de torrent"
-      },
-      correctAnswer: "b"
-    },
-    {
-      question: "Uma das principais fontes de dados para crimosos aplicarem golpes é/são",
-      answers: {
-        a: "redes sociais com informações privadas",
-        b: "Whattsapp, telegram, facebook",
-        c: "redes sociais com informações públicas"
-      },
-      correctAnswer: "c"
-    },
+  /*
+      //creating a colective array that will store many arrays.
+      const myQuestions=[];
+      if(localStorage.getItem('myQuestions')){
+        myQuestions= JSON.parse(localStorage.getItem('myQuestions'));
+      }
+   */
+
   
+  
+  //JSOgetItem(myQuestions.data);
 
+      
 
-  ];
+var db = JSON.parse(localStorage.getItem('myQuestions'));
+const myQuestions = db.data;
 
+console.log(db.data);
 
 
 
