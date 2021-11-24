@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro de Dicas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dicas.css">
+</head>
+
+<body onload="init()">
+    <h1>Gestão das dicas do Quizz (CRUD)</h1>
+    <div class="container">
+        <div class="row">
+            <div id="msg" class="col-sm-10 offset-sm-1 ">
+                <!--<div class="alert alert-warning">Contato não encontrado.</div>-->
+            </div>
+        </div>
+<!-- Formulário para gestão das perguntas do Quizz -->
+        <form id="form-gestaoDicas">
+            <div class="form-group row">
+                <div class="col-sm-2">
+                    <label for="inputId">Id</label>
+                    <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
+                </div>
+                <div class="col-sm-12">
+                    <label for="inputTitulo">Título</label>
+                    <input type="text" class="form-control" id="inputTitulo" placeholder="Qual o título?">
+                </div>
+
+                <div class="col-sm-12">
+                    <label for="inputTexto">Texto</label>
+                    <input type="text" class="form-control" id="inputTexto" placeholder="Breve descrição" >
+                </div>
+                <div class="col-sm-12">
+                    <label for="inputSite">site</label>
+                    <input type="text" class="form-control" id="inputSite" placeholder="informe o site" >
+                </div>
+            <div id="botoesAll" class="form-group row">
+                <div class="col-12">
+                    <input type="button" class="btn btn-success" id="btnInsert" value="Inserir">
+                    <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar">
+                    <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
+                  <!--   <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Form"> -->
+                </div>
+            </div>
+        </form>
+
+        <div class="row">
+            <div class="col-12">
+                <table id="grind-dicas" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Texto</th>
+                            <th scope="col">Site</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-dicas">
+                        <tr>
+                            <td scope="row">1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="dicas.js"></script>
+    <script>
+        function exibeDicas() {
+            // Remove todas as linhas do corpo da tabela
+            $("#table-dicas").html("");
+
+            // Popula a tabela com os registros do banco de dados
+            for (i = 0; i < db.data.length; i++) {
+                let gestaoDicas = db.data[i];    
+                $("#table-dicas").append(`<tr><td scope="row">${gestaoDicas.id}</td>
+                                                <td>${gestaoDicas.titulo}</td>
+                                                <td>${gestaoDicas.texto}</td>
+                                                <td>${gestaoDicas.site}</td>
+                                            </tr>`);
+            }
+        }
+
+        function init() {
+            // Adiciona funções para tratar os eventos 
+            $("#btnInsert").click(function () {
+                // Verfica se o formulário está preenchido corretamente
+                if (!$('#form-gestaoDicas')[0].checkValidity()) {
+                    displayMessage("Preencha o formulário corretamente.");
+                    return;
+                }
+
+                // Obtem os valores dos campos do formulário
+                let campoTitulo = $("#inputTitulo").val();
+                let campoTexto = $("#inputTexto").val();
+                let campoSite = $('#inputSite').val();
+                let gestaoDicas =
+                    { 
+                    titulo: campoTitulo, 
+                    texto: campoTexto, 
+                    site: campoSite,
+                    };
+
+                insertDica(gestaoDicas);
+
+                // Reexibe as perguntas
+                exibeDicas();
+
+                // Limpa o formulario
+                $("#form-gestaoDicas")[0].reset();
+            });
+
+            // Intercepta o click do botão Alterar
+            $("#btnUpdate").click(function () {
+                // Obtem os valores dos campos do formulário
+                let campoId = $("#inputId").val();
+                if (campoId == "") {
+                    displayMessage("Selecione um contato para ser alterado.");
+                    return;
+                }
+                let campoTitulo = $("#inputTitulo").val();
+                let campoTexto = $("#inputTexto").val();
+                let campoSite = $('#inputSite').val();
+                let gestaoDicas =
+                    { 
+                    titulo: campoTitulo, 
+                    texto: campoTexto, 
+                    site: campoSite,
+                    };
+
+
+                updateDica(parseInt(campoId), gestaoDicas);
+
+                // Reexibe os contatos
+                exibeDicas();
+
+                // Limpa o formulario
+                $("#form-gestaoDicas")[0].reset();
+            });
+
+            // Intercepta o click do botão Excluir
+            $("#btnDelete").click(function () {
+                let campoId = $("#inputId").val();
+                if (campoId == "") {
+                    displayMessage("Selecione um contato a ser excluído.");
+                    return;
+                }
+                deleteDica(parseInt(campoId));
+
+                // Reexibe os contatos
+                exibeDicas();
+
+                // Limpa o formulario
+                $("#form-gestaoDicas")[0].reset();
+            });
+
+            // Intercepta o click do botão Listar Contatos
+            $("#btnClear").click(function () {
+                $("#form-   ")[0].reset();
+            });
+
+            // Oculta a mensagem de aviso após alguns segundos
+            $('#msg').bind("DOMSubtreeModified", function () {
+                window.setTimeout(function () {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                        $(this).remove();
+                    });
+                }, 5000);
+            }); 
+
+            // Preenche o formulário quando o usuario clicar em uma linha da tabela 
+            $("#grind-dicas").on("click", "tr", function (e) {
+                let linhagestaoDicas = this;
+                colunas = linhagestaoDicas.querySelectorAll("td");
+                $("#inputId").val(colunas[0].innerText);
+                $("#inputTitulo").val(colunas[1].innerText);
+                $("#inputTexto").val(colunas[2].innerText);
+                $("#inputSite").val(colunas[3].innerText);
+            });
+
+            exibeDicas();
+        }
+    </script>
+</body>
+
+</html>

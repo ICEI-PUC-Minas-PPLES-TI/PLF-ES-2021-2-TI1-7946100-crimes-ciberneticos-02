@@ -127,6 +127,7 @@ function updatePergunta(id, perguntaQuizz) {
 
   // Atualiza os dados no Local Storage
   localStorage.setItem("db_quizz", JSON.stringify(db));
+  localStorage.setItem("myQuestions", JSON.stringify(myQuestions));
 }
 
 function deletePergunta(id) {
@@ -139,4 +140,5 @@ function deletePergunta(id) {
 
   // Atualiza os dados no Local Storage
   localStorage.setItem("db_quizz", JSON.stringify(db));
+  localStorage.setItem("myQuestions", JSON.stringify(myQuestions));
 }
