@@ -3,9 +3,9 @@ var db_perguntaQuizzStdin = {
   data: [
     {
       id: 1,
-      pergunta: "O nome dado aos golpes aplicados por meios humanos e sociais se chama:",
-      dica:
-        "",
+      pergunta:
+        "O nome dado aos golpes aplicados por meios humanos e sociais se chama:",
+      dica: "",
       alternativaA: "Vigarice",
       alternativaB: "Pilantragem",
       alternativaC: "Hacking",
@@ -27,31 +27,30 @@ var db_perguntaQuizzStdin = {
   ],
 };
 
-
 //banco de questões
 var db_myQuestions = {
   data: [
-  {
-    question: "O nome dado aos golpes aplicados por meios humanos e sociais se chama:",
-    answers: {
-      a: "Vigarice",
-      b: "Pilantragem",
-      c: "Hacking",
-      d: "Engenharia social"
+    {
+      question: "O nome dado aos golpes aplicados por meios humanos e sociais se chama:",
+      answers: {
+        a: "Vigarice",
+        b: "Pilantragem",
+        c: "Hacking",
+        d: "Engenharia social"
+      },
+    {
+      question: "A maioria dos golpes são aplicados por :",
+      answers: {
+        a: "meios tecnológicos",
+        b: "sociais ou humanos",
+        c: "em sites de pornografia",
+        d: "nos sites de torrent",
+      },
+      correctAnswer: "b",
     },
-    correctAnswer: "d"
-  },
-  {
-  question: "A maioria dos golpes são aplicados por :",
-    answers: {
-      a: "meios tecnológicos",
-      b: "sociais ou humanos",
-      c: "em sites de pornografia",
-      d: "nos sites de torrent"
-    },
-    correctAnswer: "b"
-  },
-]};
+
+  ]
+};
 
 
 // Caso os dados já estejam no Local Storage, caso contrário, carrega os dados iniciais
@@ -67,7 +66,6 @@ if (!myQuestions) {
   myQuestions = db_myQuestions;
 }
 
-
 // Exibe mensagem em um elemento de ID msg
 function displayMessage(msg) {
   $("#msg").html('<div class="alert alert-warning">' + msg + "</div>");
@@ -77,8 +75,7 @@ function insertPergunta(perguntaQuizz) {
   // Calcula novo Id a partir do último código existente no array (PODE GERAR ERRO SE A BASE ESTIVER VAZIA)
   let novoId = 1;
   if (db.data.length != 0) novoId = db.data[db.data.length - 1].id + 1;
-  let novaPergunta = 
-    {
+  let novaPergunta = {
     id: novoId,
     pergunta: perguntaQuizz.pergunta,
     dica: perguntaQuizz.dica,
@@ -88,29 +85,29 @@ function insertPergunta(perguntaQuizz) {
     alternativaD: perguntaQuizz.alternativaD,
     alternativaCorreta: perguntaQuizz.alternativaCorreta,
     site: perguntaQuizz.site,
-    };
-    
+  };
 
- 
-    var cquestion = 
-      {
-        question:perguntaQuizz.pergunta,
-        answers:
-        {
-          a:perguntaQuizz.alternativaA,
-          b:perguntaQuizz.alternativaB,
-          c:perguntaQuizz.alternativaC,
-          d:perguntaQuizz.alternativaD,
-        },
-        correctAnswer:perguntaQuizz.alternativaCorreta,
-      };
 
-    
 
-    
+  var cquestion =
+  {
+    question: perguntaQuizz.pergunta,
+    answers:
+    {
+      a: perguntaQuizz.alternativaA,
+      b: perguntaQuizz.alternativaB,
+      c: perguntaQuizz.alternativaC,
+      d: perguntaQuizz.alternativaD,
+    },
+    correctAnswer: perguntaQuizz.alternativaCorreta,
+  };
+
+
+
+
   // Insere o novo objeto no array
   db.data.push(novaPergunta);
-  
+
   myQuestions.data.push(cquestion);
 
   displayMessage("Pergunta inserida com sucesso");
@@ -118,14 +115,14 @@ function insertPergunta(perguntaQuizz) {
   // Atualiza os dados no Local Storage
   localStorage.setItem("db_quizz", JSON.stringify(db));
   localStorage.setItem("myQuestions", JSON.stringify(myQuestions));
-  } 
+}
 
 function updatePergunta(id, perguntaQuizz) {
   // Localiza o indice do objeto a ser alterado no array a partir do seu ID
   let index = db.data.map((obj) => obj.id).indexOf(id);
 
   // Altera os dados do objeto no array
-    (db.data[index].pergunta = perguntaQuizz.pergunta),
+  (db.data[index].pergunta = perguntaQuizz.pergunta),
     (db.data[index].dica = perguntaQuizz.dica),
     (db.data[index].alternativaA = perguntaQuizz.alternativaA),
     (db.data[index].alternativaB = perguntaQuizz.alternativaB),
@@ -136,7 +133,7 @@ function updatePergunta(id, perguntaQuizz) {
     displayMessage("Pergunta alterada com sucesso");
 
   // Atualiza os dados no Local Storage
-  
+
   localStorage.setItem("db_quizz", JSON.stringify(db));
   localStorage.setItem("myQuestions", JSON.stringify(myQuestions));
 }
@@ -153,5 +150,3 @@ function deletePergunta(id) {
   localStorage.setItem("db_quizz", JSON.stringify(db));
   localStorage.setItem("myQuestions", JSON.stringify(myQuestions));
 }
-
-
