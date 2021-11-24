@@ -48,11 +48,14 @@
 
     // for each question...
     myQuestions.forEach( (currentQuestion, questionNumber) => {
-
+    
       // find selected answer
+      
       const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+    
 
       // if answer is correct
       if(userAnswer === currentQuestion.correctAnswer){
@@ -67,6 +70,30 @@
         // color the answers red
         answerContainers[questionNumber].style.color = 'red';
       }
+
+      //creating a passing value
+      // an empty array 
+      let uAnswer ={
+        'number':'',
+        'answer':''
+      }
+
+      //passing the values
+      uAnswer.number = questionNumber;
+      console.log(uAnswer.number);
+      uAnswer.answer = userAnswer;
+      console.log(uAnswer.answer);
+
+      //creating a colective array that will store many arrays.
+      let uAnswers=[];
+      if(localStorage.getItem('uAnswers')){
+        uAnswers= JSON.parse(localStorage.getItem('uAnswers'));
+      }
+      uAnswers.push(uAnswer);
+      localStorage.setItem('uAnswers', JSON.stringify(uAnswers));
+
+
+    ///////////////////
     });
 
     // show number of correct answers out of total
@@ -83,7 +110,7 @@
     else{
       previousButton.style.display = 'inline-block';
     }
-    if(currentSlide === slides.length-1){
+    if(currentSlide === slides.length-1 ){
       nextButton.style.display = 'none';
       submitButton.style.display = 'inline-block';
     }
@@ -93,8 +120,13 @@
     }
   }
 
+  //Next and previous
+
   function showNextSlide() {
-    showSlide(currentSlide + 1);
+    if ($('input[type=radio]:checked').length > 0) {
+      showSlide(currentSlide + 1);
+  }
+    
   }
 
   function showPreviousSlide() {
@@ -102,41 +134,54 @@
   }
 
   // Variables
+  
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
+  
+  //Only this part should be changed 
   const myQuestions = [
     {
-      question: "Você sabe o que é autenticação de dois fatores?",
+      question: "O nome dado aos golpes aplicados por meios humanos e sociais se chama:",
       answers: {
-        a: "SIM",
-        b: "NÃO"
+        a: "Vigarice",
+        b: "Pilantragem",
+        c: "Hacking",
+        d: "Engenharia social"
       },
-      correctAnswer: "a"
+      correctAnswer: "d"
     },
     {
-      question: "Suas senhas usam combinações de letras maiúsculas mininúsculas e caracteres especiais?",
+    question: "A maioria dos golpes são aplicados por :",
       answers: {
-        a: "",
-        b: "",
-        c: ""
+        a: "meios tecnológicos",
+        b: "sociais ou humanos",
+        c: "em sites de pornografia",
+        d: "nos sites de torrent"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "Uma das principais fontes de dados para crimosos aplicarem golpes é/são",
+      answers: {
+        a: "redes sociais com informações privadas",
+        b: "Whattsapp, telegram, facebook",
+        c: "redes sociais com informações públicas"
       },
       correctAnswer: "c"
     },
-    {
-      question: "?",
-      answers: {
-        a: "",
-        b: "",
-        c: "",
-        d: ""
-      },
-      correctAnswer: "d"
-    }
+  
+
+
   ];
+
+
+
 
   // Kick things off
   buildQuiz();
+
+ 
 
   // Pagination
   const previousButton = document.getElementById("previous");
@@ -148,7 +193,12 @@
   showSlide(currentSlide);
 
   // Event listeners
+  //this part that calls the functions most important
+
+
+  //ends the quiz
   submitButton.addEventListener('click', showResults);
+  //next and previous slides
   previousButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
 })();

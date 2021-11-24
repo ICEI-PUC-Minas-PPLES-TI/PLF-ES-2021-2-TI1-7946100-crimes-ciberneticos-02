@@ -1,24 +1,7 @@
 
  /**/
- body{
-	font-size: 20px;
-	font-family: sans-serif;
-	color: #333;
-}
-button{
-  color: white;
-  background-color: green;
-  border: 0px;
-	border-radius: 3px;
-}
 
-#next{
-  color: white;
-  background-color:black;
-  border: 0px;
-	border-radius: 3px;
-}
- .question{
+.question{
 	font-weight: 600;
 }
 .answers {
@@ -56,15 +39,13 @@ button{
 	z-index: 2;
   }
   .quiz-container{
-
-    display: block;
+    display: flex;
     justify-content: center;
+    float: center;
 	  position: relative;
-	  height: 220px;
-	  margin-top: 60px;
-    margin-left: auto;
-    margin-right: auto;
-  
+	  height: 200px;
+	  margin-top: 40px;
+    align-items: center;
   }
   
   #qz_container{
@@ -87,20 +68,15 @@ button{
   .header {
       overflow: hidden;
       background-color: #201e1e;
-      
       vertical-align: center;
   }
 
-  .header-right{
-    padding-top: 15px;
-  }
 
   .header a {
       float: left;
       color: rgb(255, 255, 255);
       text-align: center;
       padding: 12px;
-      
       text-decoration: none;
       font-size: 18px;
       line-height: 25px;
@@ -148,8 +124,7 @@ button{
     
     /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
   .logo{
-      width: 55px;
-     
+      width: 70px;
   }
     
     /* Change the background color on mouse-over */
