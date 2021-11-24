@@ -149,9 +149,6 @@
    */
 
   
-  
-  //JSOgetItem(myQuestions.data);
-
       
 
 var db = JSON.parse(localStorage.getItem('myQuestions'));

@@ -29,27 +29,53 @@ var db_perguntaQuizzStdin = {
 
 //banco de questões
 var db_myQuestions = {
+
   data: [
+
     {
-      question: "O nome dado aos golpes aplicados por meios humanos e sociais se chama:",
+
+      question:
+
+        "O nome dado aos golpes aplicados por meios humanos e sociais se chama:",
+
       answers: {
+
         a: "Vigarice",
+
         b: "Pilantragem",
+
         c: "Hacking",
-        d: "Engenharia social"
+
+        d: "Engenharia social",
+
       },
-    {
-      question: "A maioria dos golpes são aplicados por :",
-      answers: {
-        a: "meios tecnológicos",
-        b: "sociais ou humanos",
-        c: "em sites de pornografia",
-        d: "nos sites de torrent",
-      },
-      correctAnswer: "b",
+
+      correctAnswer: "d",
+
     },
 
-  ]
+    {
+
+      question: "A maioria dos golpes são aplicados por :",
+
+      answers: {
+
+        a: "meios tecnológicos",
+
+        b: "sociais ou humanos",
+
+        c: "em sites de pornografia",
+
+        d: "nos sites de torrent",
+
+      },
+
+      correctAnswer: "b",
+
+    },
+
+  ],
+
 };
 
 
