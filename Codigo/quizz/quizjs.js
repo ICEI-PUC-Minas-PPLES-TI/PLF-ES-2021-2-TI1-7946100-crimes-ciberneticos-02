@@ -140,7 +140,10 @@
   const submitButton = document.getElementById('submit');
   
   //Only this part should be changed 
-  const myQuestions = JSON.parse.localStorage.getItem('myQuestion');
+var db = JSON.parse(localStorage.getItem('myQuestions'));
+const myQuestions = db.data;
+
+console.log(db.data);
 
 
 

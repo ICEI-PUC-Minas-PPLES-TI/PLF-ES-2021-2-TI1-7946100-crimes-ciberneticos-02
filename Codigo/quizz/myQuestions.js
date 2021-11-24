@@ -29,30 +29,55 @@ var db_perguntaQuizzStdin = {
 
 //banco de questões
 var db_myQuestions = {
+
   data: [
+
     {
+
       question:
+
         "O nome dado aos golpes aplicados por meios humanos e sociais se chama:",
+
       answers: {
+
         a: "Vigarice",
+
         b: "Pilantragem",
+
         c: "Hacking",
+
         d: "Engenharia social",
+
       },
+
       correctAnswer: "d",
+
     },
+
     {
+
       question: "A maioria dos golpes são aplicados por :",
+
       answers: {
+
         a: "meios tecnológicos",
+
         b: "sociais ou humanos",
+
         c: "em sites de pornografia",
+
         d: "nos sites de torrent",
+
       },
+
       correctAnswer: "b",
+
     },
+
   ],
+
 };
+
 
 // Caso os dados já estejam no Local Storage, caso contrário, carrega os dados iniciais
 var db = JSON.parse(localStorage.getItem("db_quizz"));
@@ -60,7 +85,8 @@ if (!db) {
   db = db_perguntaQuizzStdin;
 }
 
-// banco questões
+
+// banco questões 
 var myQuestions = JSON.parse(localStorage.getItem("myQuestions"));
 if (!myQuestions) {
   myQuestions = db_myQuestions;
@@ -87,9 +113,13 @@ function insertPergunta(perguntaQuizz) {
     site: perguntaQuizz.site,
   };
 
-  var cquestion = {
+
+
+  var cquestion =
+  {
     question: perguntaQuizz.pergunta,
-    answers: {
+    answers:
+    {
       a: perguntaQuizz.alternativaA,
       b: perguntaQuizz.alternativaB,
       c: perguntaQuizz.alternativaC,
@@ -97,6 +127,9 @@ function insertPergunta(perguntaQuizz) {
     },
     correctAnswer: perguntaQuizz.alternativaCorreta,
   };
+
+
+
 
   // Insere o novo objeto no array
   db.data.push(novaPergunta);
@@ -126,6 +159,7 @@ function updatePergunta(id, perguntaQuizz) {
     displayMessage("Pergunta alterada com sucesso");
 
   // Atualiza os dados no Local Storage
+
   localStorage.setItem("db_quizz", JSON.stringify(db));
   localStorage.setItem("myQuestions", JSON.stringify(myQuestions));
 }
