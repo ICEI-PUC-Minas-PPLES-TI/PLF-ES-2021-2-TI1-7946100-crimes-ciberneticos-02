@@ -31,3 +31,6 @@ As ferramentas empregadas no projeto são:
 - **Planejamento de tarefas:** Microsoft 365 online - TEAMS
 - **Repositório de código fonte:** GitHub
 - **Projeto de Interface e  Wireframes:** FIGMA
+
+Follow up dos ARTEFATOS em 25.11.2021
+![02 - Product delivery_ Crimes cibernéticos 2](https://user-images.githubusercontent.com/89880598/143512988-cd6520dc-fad6-415e-b123-bb4dbf8cf3db.jpg)
