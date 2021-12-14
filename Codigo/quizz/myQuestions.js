@@ -4,14 +4,14 @@ var db_perguntaQuizzStdin = {
     {
       id: 1,
       pergunta:
-        "O nome dado aos golpes aplicados por meios humanos e sociais se chama:",
-      dica: "Resposta Vigarice",
-      alternativaA: "Vigarice",
-      alternativaB: "Pilantragem",
-      alternativaC: "Hacking",
-      alternativaD: "Engenharia social",
-      alternativaCorreta: "d",
-      site: "encurtador.com.br/myN38",
+        "Você conhece o site Registrato do Banco Central?",
+      dica: "É um site que fornece Informações gratuitas de dívidas com bancos e órgãos públicos, cheques devolvidos, contas, chaves Pix e operações de câmbio.",
+      alternativaA: "Sim",
+      alternativaB: "Sim, mas nunca entrei",
+      alternativaC: "Já ouvi falar",
+      alternativaD: "Não",
+      alternativaCorreta: "a",
+      site: "https://www.bcb.gov.br/cidadaniafinanceira/registrato",
     },
     {
       id: 2,
