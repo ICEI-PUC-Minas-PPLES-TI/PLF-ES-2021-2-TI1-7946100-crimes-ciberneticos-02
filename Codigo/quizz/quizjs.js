@@ -171,3 +171,60 @@ console.log(db.data);
   previousButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
 })();
+
+
+
+
+/*---------------Funções por Felipe Vieira------------------*/
+//Paganini, qualquer dúvida a gente conversa!!!!!
+
+//limpando respostas anteriores quando a pagina carregar.
+function clearUserAnsers ()
+{
+ localStorage.removeItem("uAnswers")
+}
+
+
+
+
+//Função para mostrar orientações finais.
+function orientacaoFinal()
+{
+
+    let respostaUsuario = JSON.parse(localStorage.getItem("uAnswers"))
+    let respostasCorreta = JSON.parse(localStorage.getItem("db_quizz"))
+    let texto01 = `<h2>E AGORA, O QUE FAZER?</h2>
+    <p>Veja os resultados e orientações abaixo</p>
+    <p>Identificamos que precisa conhecer:</p>`
+    let texto02 = ""
+
+for (let i=0; i<respostasCorreta.data.length;i++)
+
+{
+  if (respostaUsuario[i].answer != respostasCorreta.data[i].correctAnswer)
+  {
+       texto02 = texto02 + `
+                   <div id="telaOrientacaoEspecifica">
+                   
+                   <p><strong>Pergunta 0${i+1}: </strong>${respostasCorreta.data[i].pergunta}</p>
+                   <p><strong>Resposta 0${i+1}: </strong>${respostasCorreta.data[i].dica}...<a href="#">saiba mais...</a> </p>
+                   </div>
+                 `
+ }
+ let textoFinal = texto01 + texto02
+ document.getElementById("telaOrientacao").innerHTML = texto02;
+}
+    
+
+};
+document.getElementById("submit").addEventListener("click",orientacaoFinal)
+
+
+//          <h2>E AGORA, O QUE FAZER?${respostaUsuario[1].answer}</h2>
+//          <h2>E AGORA, O QUE FAZER?${respostasCorreta.data[1].correctAnswer}</h2>
+
+/*          <div id="telaOrientacaoEspecifica">
+            <p>Identificamos que precisa conhecer:</p>
+            <p><strong>Pergunta 01: </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex corporis accusantium modi. Quos ipsum esse aut non incidunt architecto quibusdam</p>
+            <p><strong>Resposta 01: </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex corporis accusantium modi. Quos ipsum esse aut non incidunt architecto quibusdam...<a href="#">saiba mais...</a> </p>
+          </div>*/

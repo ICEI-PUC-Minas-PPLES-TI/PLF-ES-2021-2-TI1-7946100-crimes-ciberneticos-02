@@ -5,7 +5,7 @@ var db_perguntaQuizzStdin = {
       id: 1,
       pergunta:
         "O nome dado aos golpes aplicados por meios humanos e sociais se chama:",
-      dica: "",
+      dica: "Resposta Vigarice",
       alternativaA: "Vigarice",
       alternativaB: "Pilantragem",
       alternativaC: "Hacking",
@@ -16,7 +16,7 @@ var db_perguntaQuizzStdin = {
     {
       id: 2,
       pergunta: "A maioria dos golpes são aplicados por :",
-      dica: "",
+      dica: "Resposta sociais ou humanos",
       alternativaA: "meios tecnológicos",
       alternativaB: "sociais ou humanos",
       alternativaC: "em sites de pornografia",
@@ -29,62 +29,36 @@ var db_perguntaQuizzStdin = {
 
 //banco de questões
 var db_myQuestions = {
-
   data: [
-
     {
-
       question:
-
         "O nome dado aos golpes aplicados por meios humanos e sociais se chama:",
-
       answers: {
-
         a: "Vigarice",
-
         b: "Pilantragem",
-
         c: "Hacking",
-
         d: "Engenharia social",
-
       },
-
       correctAnswer: "d",
-
     },
-
     {
-
       question: "A maioria dos golpes são aplicados por :",
-
       answers: {
-
         a: "meios tecnológicos",
-
         b: "sociais ou humanos",
-
         c: "em sites de pornografia",
-
         d: "nos sites de torrent",
-
       },
-
       correctAnswer: "b",
-
     },
-
   ],
-
 };
-
 
 // Caso os dados já estejam no Local Storage, caso contrário, carrega os dados iniciais
 var db = JSON.parse(localStorage.getItem("db_quizz"));
 if (!db) {
   db = db_perguntaQuizzStdin;
 }
-
 
 // banco questões 
 var myQuestions = JSON.parse(localStorage.getItem("myQuestions"));
@@ -114,7 +88,6 @@ function insertPergunta(perguntaQuizz) {
   };
 
 
-
   var cquestion =
   {
     question: perguntaQuizz.pergunta,
@@ -129,13 +102,9 @@ function insertPergunta(perguntaQuizz) {
   };
 
 
-
-
   // Insere o novo objeto no array
   db.data.push(novaPergunta);
-
   myQuestions.data.push(cquestion);
-
   displayMessage("Pergunta inserida com sucesso");
 
   // Atualiza os dados no Local Storage
@@ -176,3 +145,31 @@ function deletePergunta(id) {
   localStorage.setItem("db_quizz", JSON.stringify(db));
   localStorage.setItem("myQuestions", JSON.stringify(myQuestions));
 }
+
+
+function atualizaQuiz()
+{
+  let tamanhoDB = db.data.length //define tamanho do objeto
+  localStorage.myQuestions.data
+  for (let i=0; i<tamanhoDB;i++) //atualiza itens.
+  {
+    myQuestions.data[i].question = db.data[i].pergunta
+    myQuestions.data[i].correctAnswer = db.data[i].alternativaCorreta
+    myQuestions.data[i].answers.a = db.data[i].alternativaA
+    myQuestions.data[i].answers.b = db.data[i].alternativaB
+    myQuestions.data[i].answers.c = db.data[i].alternativaC
+    myQuestions.data[i].answers.d = db.data[i].alternativaD
+  }
+
+  for (let j=tamanhoDB; j<myQuestions.data.length;j++)
+  {
+    myQuestions.data.splice(j,1)
+  }
+  localStorage.setItem("db_quizz", JSON.stringify(db));
+  localStorage.setItem("myQuestions", JSON.stringify(myQuestions))
+}
+
+
+
+document.getElementById("btnAtualiza").addEventListener("click",atualizaQuiz)
+

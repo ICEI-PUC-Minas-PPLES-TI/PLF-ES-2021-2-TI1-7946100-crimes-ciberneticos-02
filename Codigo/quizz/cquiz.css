@@ -148,7 +148,7 @@ button{
     
     /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
   .logo{
-      width: 55px;
+      width: 70px;
      
   }
     
@@ -158,9 +158,6 @@ button{
       color: rgb(0, 0, 0, 0.2);
   }
     
-  
-  
-
   
   .card-img{
       width:80%;
@@ -188,5 +185,9 @@ button{
 	height:60px;
   }
 
+  #telaOrientacao
+  {
+    margin-top: 50px;
+  }
 
 
