@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Lockey</title>
+</head>
+
+<body>
+    <!-- Iní­cio do cabeçalho-->
+    <header class="menu">
+        <div class="header">
+            <a href="index.html"><img src="imgs/Loki.jpg" class="logo"></a>
+            <div class="header-right">
+                <ul>
+                    <!-- Menu em lista-->
+                    <li><a href="index.html">Início</li></a>
+                    <li><a href="noticias.html">Notícias</a></li>
+                    <li><a href="dicas.html">Dicas</a></li>
+                    <li><a class="active" href="equipe.html">Equipe</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- Fim do cabeçalho-->
+
+    <body class="bg-sucess">
+        <div class="col-lg-8 offset-2 my-5 col-md-8 offset-2 my-5 col-sm-12 offset-2 my-5 col-xsm-12 offset-2 my-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Grafico de Conhecimento Geral</h5>
+                    <hr>
+                    <canvas id="ChardUsuario"></canvas>
+                </div>
+            </div>
+        </div>
+        <script>
+
+            var importunaçãoSexual = 5, rouboDeDados = 9, invasão = 7, perfisFalsos = 6, hacktivismo = 10;
+            var ctx = document.getElementById('ChardUsuario').getContext('2d');
+            var ChardUsuario = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['Roubo de contas', 'Perfis falsos', 'Hacktivismo', 'importunação sexual', 'Invasão'],
+                    datasets: [{
+                        label: 'Suas areas de conhecimento',
+                        data: [importunaçãoSexual, rouboDeDados, invasão, perfisFalsos, hacktivismo],
+                        fill: true,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        pointBackgroundColor: 'rgb(255, 99, 132)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(255, 99, 132)'
+                    },
+                    {
+                        label: 'Media Brasil - 2020',
+                        data: [Pergunta1 = 7, Pergunta2 = 6, Pergunta3 = 4, Pergunta4 = 8, Pergunta5 = 5],
+                        fill: true,
+                        backgroundColor: 'rgb(54, 162, 235, 0.2)',
+                        borderColor: 'rgb(54, 162, 235)',
+                        pointBackgroundColor: 'rgb(54, 162, 235)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(54, 162, 235)'
+                    }]
+                },
+                options: {
+                    elements: {
+                        line: {
+                            borderWidth: 3
+                        }
+                    }
+                },
+            });
+
+        </script>
+
+        <body class="bg-sucess">
+            <div class="col-lg-8 offset-2 my-5 col-xsm-12 offset-2 my-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Media Brasil</h5>
+                        <hr>
+                        <canvas id="ChardGeral"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                var Pergunta1 = 9, Pergunta2 = 8, Pergunta3 = 7, Pergunta4 = 8, Pergunta5 = 10;
+                var ctx = document.getElementById('ChardGeral').getContext('2d');
+                var ChardGeral = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Roubo de contas', 'Perfis falsos', 'Hacktivismo', 'importunação sexual', 'Invasão'],
+                        datasets: [{
+                            label: 'Homens',
+                            data: [Pergunta1, Pergunta2, Pergunta3, Pergunta4, Pergunta5],
+                            fill: true,
+                            backgroundColor: 'rgb(18,10,143,0.5)',
+                            borderColor: 'rgb(0,0,255)',
+                            pointBackgroundColor: 'rgb(0,0,255)',
+                            pointBorderColor: '#000080',
+                            pointHoverBackgroundColor: '#000080',
+                            pointHoverBorderColor: 'rgb(0,0,255)',
+
+                        },
+                        {
+                            label: 'Media Brasil',
+                            data: [Pergunta1 = 7, Pergunta2 = 8, Pergunta3 = 5, Pergunta4 = 10, Pergunta5 = 7],
+                            backgroundColor: 'rgb(255,255,255)',
+                            pointBackgroundColor: 'rgb(207,14,14)',
+                            borderColor: 'rgb(207,14,14,0.7)',
+                            type: 'line',
+                            order: 0,
+                            stack: 'combined',
+                        }]
+                    },
+                    options: {
+                        elements: {
+                            line: {
+                                borderWidth: 3
+                            }
+                        }
+                    },
+                });
+
+            </script>
+
+            <script class="simulação de medias">
+
+            </script>
+
+            <script class="simulação Uss">
+                localStorage.setItem('Masculino', 122);
+                localStorage.setItem('Feminino', 98);
+                localStorage.setItem("Outros", 45);
+            </script>
+
+
+
+
+
+            <script>
+                // === include 'setup' then 'config' above ===
+
+                var ChardUsuario = new Chart(
+                    document.getElementById('ChardUsuario'),
+                    config
+                );
+            </script>
+            <script>
+                // === include 'setup' then 'config' above ===
+
+                var ChardGeral = new Chart(
+                    document.getElementById('ChardGeral'),
+                    config
+                );
+
+            </script>
+            <!-- Rodapé-->
+            <footer id="fter" class="bg-dark text-center text-white fixed-bottom">
+                <div class="text-center p-3" style="background-color:#201e1e;">
+                    © 2021 Copyright: Equipe de Desenvolvedores Projeto Lockey - PUC MINAS
+                </div>
+
+            </footer>
+
+            <!-- Fim do Rodapé-->
+            <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+            <script>
+                $(function () {
+                    $(".button-collapse").sideNav();
+                });
+            </script>
+
+
+
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+                integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous">
+                </script>
+            <!-- Final js -->
+        </body>
+
+
+
+
+</html>
