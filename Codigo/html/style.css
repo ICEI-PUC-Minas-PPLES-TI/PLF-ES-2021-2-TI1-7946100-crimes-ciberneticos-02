@@ -112,8 +112,7 @@
       color: white;
       height: 20px;
       size: 20px;
-      position: absolute;
-      bottom: 0;
+     
   }
   
   .card-img{
@@ -133,4 +132,22 @@
   .card-body{
      margin: 30px;
   
+  }
+
+  
+  #fter{
+
+    position:fixed;
+    margin-top: auto;
+    
+	bottom:0;
+	width:100%;
+	height:60px;
+  }
+
+
+  @media screen and (max-width:500px){
+    .logo{
+        display: none;
+    }
   }
