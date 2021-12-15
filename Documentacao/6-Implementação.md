@@ -23,5 +23,4 @@ reponder (2). Nessa tela, após o termino do quis irá aparecer os acertos(3)e e
 
 
 Caso o usuário opte pelas opções no menu (5,6,7) ele é redirecionado para a tela da opção escolhida . 5 Contém notícias relevantes sobre  crimes cibernéticos, 6 contém uma secção de dicas com links para outros sites. 7 Contém a equipe do nosso trabalho.
-
-![Exemplo de UserFlow](images/userflow.jpg)
+https://github.com/ICEI-PUC-Minas-PPLES-TI/PLF-ES-2021-2-TI1-7946100-crimes-ciberneticos-02/issues/13#issue-1080505849
