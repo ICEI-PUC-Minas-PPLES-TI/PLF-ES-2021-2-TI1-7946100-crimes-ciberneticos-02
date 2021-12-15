@@ -1,0 +1,1 @@
+//API para carregar equipe para html via API GIT HUB

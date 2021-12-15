@@ -84,4 +84,18 @@ function deleteDica(id) {
 }
 
 
-  
+function carregaDicas()
+{
+  let dicas = JSON.parse(localStorage.getItem("db_dicas"))
+
+  let textoDicas = "";
+
+  for (let i=0; i<dicas.data.length;i++)
+  {
+    textoDicas = textoDicas + `<li class="list-group-item"><a href="${dicas.data[i].site}" target="_blank">${i+1}.     ${dicas.data[i].titulo} </a>`
+  }
+  document.getElementById("telaListaDicas").innerHTML = textoDicas
+
+}
+
+//<li class="list-group-item"><a href="#">1.Mantenha o Computador Atualizad </a>

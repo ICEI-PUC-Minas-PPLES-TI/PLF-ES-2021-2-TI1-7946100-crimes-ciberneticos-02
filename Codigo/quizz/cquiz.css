@@ -180,19 +180,29 @@ button{
   }
 
   #fter{
-	position:absolute;
-	bottom:0;
-	width:100%;
-	height:60px;
+    position: relative;
+    margin-top:25%;
+    width:100%;
   }
 
   #telaOrientacao
   {
     margin-top: 50px;
+
   }
 
+#telaOrientacaoEspecifica{
+  background-color: rgba(0, 218, 0, 0.344);
+  border-radius: 10px;
+}
 
-
+#telaOrientacaoEspecifica p
+{
+  padding: 10px;
+}
+#telaOrientacao h2, p{
+  padding: 10px;
+}
 
   @media screen and (max-width:500px){
     .logo{

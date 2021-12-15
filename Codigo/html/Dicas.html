@@ -17,7 +17,7 @@
     <title>Lockey</title>
 </head>
 
-<body>
+<body onload="carregaDicas()">
   <!-- Iní­cio do cabeçalho-->
   <header>
     <header class="menu">
@@ -43,13 +43,8 @@
                         <div class="card-header">
                             <h5>Dicas</h5>
                         </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">1.Mantenha o Computador Atualizad</li>
-                            <li class="list-group-item">2.Não Armezene Senhas</li>
-                            <li class="list-group-item">3.Cuidado com Redes Sem Fio</li>
-                            <li class="list-group-item">4.Não Instalar Softwares Suspeitos</li>
-                            <li class="list-group-item">5.Cuidado com Links</li>
-                            <li class="list-group-item">6.Aministre seus Downloads no Celular </li>
+                        <ul id="telaListaDicas" class="list-group list-group-flush">
+
                         </ul>
                     </div>
                     <a href="#" class="btn btn-primary">Recomendações</a>
@@ -82,7 +77,7 @@
         </script>
 
 
-
+        <script src="/PLF-ES-2021-2-TI1-7946100-crimes-ciberneticos-02/Codigo/dicas/dicas.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>

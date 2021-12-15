@@ -116,9 +116,13 @@
   }
   
   .card-img{
-      width:80%;
+      height: auto;
+      width:50%;
       align-self: center;
+
   }
+
+  
   .Dicas{
       display: flex;
       flex-wrap: wrap;
