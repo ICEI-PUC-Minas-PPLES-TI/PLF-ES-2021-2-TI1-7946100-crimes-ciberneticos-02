@@ -22,4 +22,15 @@ Caso o usuário opte pelas opções no menu (5,6,7) ele é redirecionado para a 
 
 )![telas](https://user-images.githubusercontent.com/91435945/146115153-16d3973d-1a21-41e4-8117-0f24c10fff50.png)
 
-
+Artefatos para a criação do projeto:
+Layout, HTML, CSS, ID Visual
+Código em JS do quiz
+Gráfico de comparação das respostas do usuário com a média das respostas globais do site
+CRUD gestão de perguntas do quiz
+CRUD gestão de Notícia ou API (news API)
+CRUD gestão de dicas
+API GitHub no HTML da equipe
+Integração CRUD de perguntas com código quiz
+Integração CRUD de notícias com HTML
+Integração Gráfica com resultado do quiz
+Resgistro de usuário.
