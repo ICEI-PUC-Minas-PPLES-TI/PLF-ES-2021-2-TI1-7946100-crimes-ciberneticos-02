@@ -9,8 +9,9 @@
  com a IDE Microsoft Visual Studio code.
 
 ## Arquitetura da solução
+Ao implementar nossa solução buscamos aplicar os conhecimentos adquiridos ao longo do semestre e chegamos na seguinte solução:
 
-Assimque o usuário entra na plataforma, ele é apresentado à tela inicial
+Assim que o usuário entra na plataforma, ele é apresentado à tela inicial
 (1) onde ele é confrontado a inicialização do quis.
 
 Caso ele opte iniciar o quis , ele é redirecionado para a tela do quis, onde pode
