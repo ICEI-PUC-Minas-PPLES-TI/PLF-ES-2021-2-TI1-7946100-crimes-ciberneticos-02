@@ -7,6 +7,7 @@
 }
 button{
   color: white;
+  margin-top: 20px;
   background-color: green;
   border: 0px;
 	border-radius: 3px;
@@ -191,3 +192,10 @@ button{
   }
 
 
+
+
+  @media screen and (max-width:500px){
+    .logo{
+        display: none;
+    }
+  }
