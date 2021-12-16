@@ -188,7 +188,7 @@ function clearUserAnsers() {
 
 //Função para mostrar orientações finais.
 function orientacaoFinal() {
-  alert("test");
+  
   let respostaUsuario = JSON.parse(localStorage.getItem("uAnswers"))
   let respostasCorreta = JSON.parse(localStorage.getItem("db_quizz"))
   let texto01 = `<h2>E AGORA, O QUE FAZER?</h2>

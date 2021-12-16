@@ -154,4 +154,18 @@
     .logo{
         display: none;
     }
-  }
+    p {
+        color: rgb(255, 255, 255);
+        background-color: rgba(0, 0, 0, 0.37);
+        font-weight: bold;
+
+    }
+    h5{
+        background-color: rgba(0, 0, 0, 0.37);
+    }
+    .card-img
+    {
+        display: block;
+    }
+
+  } 

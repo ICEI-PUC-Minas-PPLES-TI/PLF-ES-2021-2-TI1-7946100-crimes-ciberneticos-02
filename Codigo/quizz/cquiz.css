@@ -1,4 +1,4 @@
-[21:51] Luiz Felipe Vieira
+
 
 /**/
 body {
@@ -36,13 +36,14 @@ button {
 #submit {
   font-family     : sans-serif;
   font-size       : 20px;
-  background-color: #279;
+  background-color: rgb(0, 0, 0);
   color           : #fff;
   border          : 0px;
   border-radius   : 3px;
   /*padding       : 20px; */
   cursor          : pointer;
   margin-bottom   : 20px;
+  
 }
 
 #submit:hover {
@@ -176,15 +177,18 @@ a.nav-link {
 
 #telaOrientacao {
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 #telaOrientacaoEspecifica {
   background-color: rgba(0, 218, 0, 0.344);
   border-radius   : 10px;
+
 }
 
 #telaOrientacaoEspecifica p {
   padding: 10px;
+
 }
 
 #telaOrientacao h2,
@@ -195,4 +199,10 @@ p {
 #bodyResult {
   max-width: 600px;
   margin: auto 50%;
+}
+
+@media screen and (max-width:500px){
+  .logo{
+      display: none;
+  }
 }

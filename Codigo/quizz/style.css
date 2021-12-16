@@ -163,4 +163,8 @@
 	height:60px;
   }
 
-
+  @media screen and (max-width:500px){
+    .logo{
+        display: none;
+    }
+  }
