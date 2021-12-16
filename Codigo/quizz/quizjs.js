@@ -1,6 +1,6 @@
-(function(){
+(function () {
   // Functions
-  function buildQuiz(){
+  function buildQuiz() {
     // variable to store the HTML output
     const output = [];
 
@@ -12,7 +12,7 @@
         const answers = [];
 
         // and for each available answer...
-        for(letter in currentQuestion.answers){
+        for (letter in currentQuestion.answers) {
 
           // ...add an HTML radio button
           answers.push(
@@ -38,7 +38,7 @@
     quizContainer.innerHTML = output.join('');
   }
 
-  function showResults(){
+  function showResults() {
 
     // gather answer containers from our quiz
     const answerContainers = quizContainer.querySelectorAll('.answers');
@@ -47,18 +47,18 @@
     let numCorrect = 0;
 
     // for each question...
-    myQuestions.forEach( (currentQuestion, questionNumber) => {
-    
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+
       // find selected answer
-      
+
       const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-    
+
 
       // if answer is correct
-      if(userAnswer === currentQuestion.correctAnswer){
+      if (userAnswer === currentQuestion.correctAnswer) {
         // add to the number of correct answers
         numCorrect++;
 
@@ -66,16 +66,16 @@
         answerContainers[questionNumber].style.color = 'lightgreen';
       }
       // if answer is wrong or blank
-      else{
+      else {
         // color the answers red
         answerContainers[questionNumber].style.color = 'red';
       }
 
       //creating a passing value
       // an empty array 
-      let uAnswer ={
-        'number':'',
-        'answer':''
+      let uAnswer = {
+        'number': '',
+        'answer': ''
       }
 
       //passing the values
@@ -85,15 +85,15 @@
       console.log(uAnswer.answer);
 
       //creating a colective array that will store many arrays.
-      let uAnswers=[];
-      if(localStorage.getItem('uAnswers')){
-        uAnswers= JSON.parse(localStorage.getItem('uAnswers'));
+      let uAnswers = [];
+      if (localStorage.getItem('uAnswers')) {
+        uAnswers = JSON.parse(localStorage.getItem('uAnswers'));
       }
       uAnswers.push(uAnswer);
       localStorage.setItem('uAnswers', JSON.stringify(uAnswers));
 
 
-    ///////////////////
+      ///////////////////
     });
 
     // show number of correct answers out of total
@@ -104,17 +104,17 @@
     slides[currentSlide].classList.remove('active-slide');
     slides[n].classList.add('active-slide');
     currentSlide = n;
-    if(currentSlide === 0){
+    if (currentSlide === 0) {
       previousButton.style.display = 'none';
     }
-    else{
+    else {
       previousButton.style.display = 'inline-block';
     }
-    if(currentSlide === slides.length-1 ){
+    if (currentSlide === slides.length - 1) {
       nextButton.style.display = 'none';
       submitButton.style.display = 'inline-block';
     }
-    else{
+    else {
       nextButton.style.display = 'inline-block';
       submitButton.style.display = 'none';
     }
@@ -125,8 +125,8 @@
   function showNextSlide() {
     if ($('input[type=radio]:checked').length > 0) {
       showSlide(currentSlide + 1);
-  }
-    
+    }
+
   }
 
   function showPreviousSlide() {
@@ -134,23 +134,23 @@
   }
 
   // Variables
-  
+
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
-  
-  //Only this part should be changed 
-var db = JSON.parse(localStorage.getItem('myQuestions'));
-const myQuestions = db.data;
 
-console.log(db.data);
+  //Only this part should be changed 
+  var db = JSON.parse(localStorage.getItem('myQuestions'));
+  const myQuestions = db.data;
+
+  console.log(db.data);
 
 
 
   // Kick things off
   buildQuiz();
 
- 
+
 
   // Pagination
   const previousButton = document.getElementById("previous");
@@ -179,43 +179,39 @@ console.log(db.data);
 //Paganini, qualquer dúvida a gente conversa!!!!!
 
 //limpando respostas anteriores quando a pagina carregar.
-function clearUserAnsers ()
-{
- localStorage.removeItem("uAnswers")
+function clearUserAnsers() {
+  localStorage.removeItem("uAnswers")
 }
 
 
 
 
 //Função para mostrar orientações finais.
-function orientacaoFinal()
-{
-
-    let respostaUsuario = JSON.parse(localStorage.getItem("uAnswers"))
-    let respostasCorreta = JSON.parse(localStorage.getItem("db_quizz"))
-    let texto01 = `<h2>E AGORA, O QUE FAZER?</h2>
+function orientacaoFinal() {
+  alert("test");
+  let respostaUsuario = JSON.parse(localStorage.getItem("uAnswers"))
+  let respostasCorreta = JSON.parse(localStorage.getItem("db_quizz"))
+  let texto01 = `<h2>E AGORA, O QUE FAZER?</h2>
     <p>Veja os resultados e orientações abaixo para as perguntas que você errou!</p>
     `
-    let texto02 = ""
+  let texto02 = ""
 
-for (let i=0; i<respostasCorreta.data.length;i++)
-{
-  let link = respostasCorreta.data[i].site
-  if (respostaUsuario[i].answer != respostasCorreta.data[i].alternativaCorreta)
-  {
-       texto02 = texto02 + `
+  for (let i = 0; i < respostasCorreta.data.length; i++) {
+    let link = respostasCorreta.data[i].site
+    if (respostaUsuario[i].answer != respostasCorreta.data[i].alternativaCorreta) {
+      texto02 = texto02 + `
                    <div id="telaOrientacaoEspecifica">
                    
-                   <p><strong>Pergunta 0${i+1}: </strong>${respostasCorreta.data[i].pergunta}</p>
-                   <p><strong>Resposta 0${i+1}: </strong>${respostasCorreta.data[i].dica}...<a href="${link}" target="_blank">saiba mais...</a> </p>
+                   <p><strong>Pergunta 0${i + 1}: </strong>${respostasCorreta.data[i].pergunta}</p>
+                   <p><strong>Resposta 0${i + 1}: </strong>${respostasCorreta.data[i].dica}...<a href="${link}" target="_blank">saiba mais...</a> </p>
                    </div>
                  `
- }
- let textoFinal = texto01 + texto02
- document.getElementById("telaOrientacao").innerHTML = textoFinal;
-}
-    
+    }
+    let textoFinal = texto01 + texto02
+    document.getElementById("telaOrientacao").innerHTML = textoFinal;
+  }
+
 
 };
-document.getElementById("submit").addEventListener("click",orientacaoFinal)
+document.getElementById("submit").addEventListener("click", orientacaoFinal)
 

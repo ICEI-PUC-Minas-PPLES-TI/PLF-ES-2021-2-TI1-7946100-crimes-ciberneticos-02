@@ -13,11 +13,11 @@
 
     <link type="text/css" rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Codigo/quizz/cquiz.css">
     <title>Lockey</title>
 </head>
 
-<body>
+<body onload="orientacaoFinal()">
     <!-- Iní­cio do cabeçalho-->
     <header class="menu">
         <div class="header">
@@ -28,85 +28,71 @@
                     <li><a href="index.html">Início</li></a>
                     <li><a href="noticias.html">Notícias</a></li>
                     <li><a href="dicas.html">Dicas</a></li>
-                    <li><a class="active" href="equipe.html">Equipe</a></li>
+                    <li><a href="equipe.html">Equipe</a></li>
                 </ul>
             </div>
         </div>
     </header>
     <!-- Fim do cabeçalho-->
 
-    <body class="bg-sucess">
-        <div class="col-lg-8 offset-2 my-5 col-md-8 offset-2 my-5 col-sm-12 offset-2 my-5 col-xsm-12 offset-2 my-5">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Grafico de Conhecimento Geral</h5>
-                    <hr>
-                    <canvas id="ChardUsuario"></canvas>
-                </div>
-            </div>
+    <section>
+        <div class=" col-lg-5 col-md-12  col-sm-12  col-xs-12 " id="telaOrientacao">
+            <p>Texte</p>
         </div>
-        <script>
+        <div class="  col-lg-6 col-md-12  col-sm-12   col-xs-12">
+            <h5 class="card-title">Media global do conhecimento dos usuarios do site</h5>
+            <hr>
+            <canvas id="ChardUsuario"></canvas>
+            <script>
 
-            var importunaçãoSexual = 5, rouboDeDados = 9, invasão = 7, perfisFalsos = 6, hacktivismo = 10;
-            var ctx = document.getElementById('ChardUsuario').getContext('2d');
-            var ChardUsuario = new Chart(ctx, {
-                type: 'radar',
-                data: {
-                    labels: ['Roubo de contas', 'Perfis falsos', 'Hacktivismo', 'importunação sexual', 'Invasão'],
-                    datasets: [{
-                        label: 'Suas areas de conhecimento',
-                        data: [importunaçãoSexual, rouboDeDados, invasão, perfisFalsos, hacktivismo],
-                        fill: true,
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgb(255, 99, 132)',
-                        pointBackgroundColor: 'rgb(255, 99, 132)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgb(255, 99, 132)'
+                var importunaçãoSexual = 0.60, rouboDeDados = 0.71, invasão = 0.45, perfisFalsos = 0.69, hacktivismo = 0.55;
+                var ctx = document.getElementById('ChardUsuario').getContext('2d');
+                var ChardUsuario = new Chart(ctx, {
+                    type: 'radar',
+                    data: {
+                        labels: ['importunaçãoSexual', 'rouboDeDados', 'invasão', 'perfisFalsos', 'hacktivismo'],
+                        datasets: [{
+                            label: 'Suas areas de conhecimento',
+                            data: [importunaçãoSexual, rouboDeDados, invasão, perfisFalsos, hacktivismo],
+                            fill: true,
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgb(255, 99, 132)',
+                            pointBackgroundColor: 'rgb(255, 99, 132)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgb(255, 99, 132)'
+                        }]
                     },
-                    {
-                        label: 'Media Brasil - 2020',
-                        data: [Pergunta1 = 7, Pergunta2 = 6, Pergunta3 = 4, Pergunta4 = 8, Pergunta5 = 5],
-                        fill: true,
-                        backgroundColor: 'rgb(54, 162, 235, 0.2)',
-                        borderColor: 'rgb(54, 162, 235)',
-                        pointBackgroundColor: 'rgb(54, 162, 235)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgb(54, 162, 235)'
-                    }]
-                },
-                options: {
-                    elements: {
-                        line: {
-                            borderWidth: 3
+                    options: {
+                        elements: {
+                            line: {
+                                borderWidth: 3
+                            }
                         }
-                    }
-                },
-            });
+                    },
+                });
 
-        </script>
+            </script>
+        </div>
 
-        <body class="bg-sucess">
-            <div class="col-lg-8 offset-2 my-5 col-xsm-12 offset-2 my-5">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Media Brasil</h5>
-                        <hr>
-                        <canvas id="ChardGeral"></canvas>
-                    </div>
-                </div>
-            </div>
+    </section>
+
+    <section>
+        <div class=" col-lg-5 col-md-12  col-sm-12  col-xs-12 ">
+            <hr>
+            <h5 class="card-title">Media de acertos por pergunta</h5>
+            <hr>
+            <canvas id="ChardGeral"></canvas>
 
             <script>
-                var Pergunta1 = 9, Pergunta2 = 8, Pergunta3 = 7, Pergunta4 = 8, Pergunta5 = 10;
+                var Pergunta1 = 7, Pergunta2 = 8, Pergunta3 = 7.3, Pergunta4 = 7, Pergunta5 = 7.5;
                 var ctx = document.getElementById('ChardGeral').getContext('2d');
                 var ChardGeral = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: ['Roubo de contas', 'Perfis falsos', 'Hacktivismo', 'importunação sexual', 'Invasão'],
+                        labels: ['R', 'P', 'H', 'IS', 'I'],
                         datasets: [{
-                            label: 'Homens',
+                            label: 'Usuario',
                             data: [Pergunta1, Pergunta2, Pergunta3, Pergunta4, Pergunta5],
                             fill: true,
                             backgroundColor: 'rgb(18,10,143,0.5)',
@@ -116,16 +102,6 @@
                             pointHoverBackgroundColor: '#000080',
                             pointHoverBorderColor: 'rgb(0,0,255)',
 
-                        },
-                        {
-                            label: 'Media Brasil',
-                            data: [Pergunta1 = 7, Pergunta2 = 8, Pergunta3 = 5, Pergunta4 = 10, Pergunta5 = 7],
-                            backgroundColor: 'rgb(255,255,255)',
-                            pointBackgroundColor: 'rgb(207,14,14)',
-                            borderColor: 'rgb(207,14,14,0.7)',
-                            type: 'line',
-                            order: 0,
-                            stack: 'combined',
                         }]
                     },
                     options: {
@@ -143,14 +119,10 @@
 
             </script>
 
-            <script class="simulação Uss">
-                localStorage.setItem('Masculino', 122);
-                localStorage.setItem('Feminino', 98);
-                localStorage.setItem("Outros", 45);
-            </script>
 
 
 
+            <script src="/Codigo/quizz/quizjs.js"></script>
 
 
             <script>
@@ -170,13 +142,13 @@
                 );
 
             </script>
-            <!-- Rodapé-->
+            <!-- Rodapé
             <footer id="fter" class="bg-dark text-center text-white fixed-bottom">
                 <div class="text-center p-3" style="background-color:#201e1e;">
                     © 2021 Copyright: Equipe de Desenvolvedores Projeto Lockey - PUC MINAS
                 </div>
 
-            </footer>
+            </footer>-->
 
             <!-- Fim do Rodapé-->
             <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -203,7 +175,8 @@
                 crossorigin="anonymous">
                 </script>
             <!-- Final js -->
-        </body>
+    </section>
+</body>
 
 
 
