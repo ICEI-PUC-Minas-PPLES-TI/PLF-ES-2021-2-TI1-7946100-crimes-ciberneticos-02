@@ -1,0 +1,29 @@
+cff-version: 1.0.1
+message: Please cite this software using these metadata.
+title: LOCKEY
+authors:
+  - family-names: Fernandes de Aguiar
+    given-names: Filipe 
+  - family-names: Vieira
+    given-names: Luiz Felipe  
+  - family-names: Freitas da Silva
+    given-names: Marcos Paulo  
+  - family-names: Miranda Cançado
+    given-names: Matheus 
+  - family-names: Paganini T. Filho
+    given-names: Renato 
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Dias Ferreira da Rocha
+    given-names: Roberto Felipe 
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Vieira Carneiro
+    given-names: Rommel 
+keywords:
+  - Educacional
+  - Segurança na Web
+repository-code: https://github.com/ICEI-PUC-Minas-PPLES-TI/PLF-ES-2021-2-TI1-7946100-crimes-ciberneticos-02
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2021-12-22
