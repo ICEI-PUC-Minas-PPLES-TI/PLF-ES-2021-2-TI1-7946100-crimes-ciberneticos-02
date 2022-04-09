@@ -15,3 +15,4 @@ O Foco do projeto é o desenvolvimento de uma ferramenta educativa de acesso pop
 
 * Rommel Vieira Carneiro
 * Simone Alves Nogueira
+* Nathália Assis Valentim
